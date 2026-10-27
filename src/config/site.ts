@@ -27,7 +27,7 @@ export const siteConfig = {
     formation: '[FORMAÇÃO-PENDENTE-VALIDAÇÃO-DOCUMENTAL]',
     registrationLabel: '[CONSELHO-PENDENTE-VALIDAÇÃO]',
     registrationNumber: '[NÚMERO-REGISTRO-PENDENTE]',
-    photoSrc: '/images/retrato_clinica.png',
+    photoSrc: '/images/dr_nestor_freire.jpg',
   },
 
   social: {
