@@ -16,9 +16,9 @@ export const siteConfig = {
     neighborhood: 'Cambuí',
     city: 'Campinas',
     state: 'SP',
-    address: '[ENDEREÇO-COMPLETO-PENDENTE]',
+    address: 'Rua Coronel Quirino, 453',
     hours: '[HORÁRIOS-PENDENTE]',
-    mapsEmbed: '[LINK-MAPS-PENDENTE]',
+    mapsEmbed: 'https://www.google.com/maps?q=-22.903666,-47.0504445&z=17&output=embed',
   },
 
   professional: {
