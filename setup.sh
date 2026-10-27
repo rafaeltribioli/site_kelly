@@ -29,23 +29,25 @@ npm run build
 # ── 4. Repositório git ────────────────────────────────────────────────────────
 if [ -n "$GIT_BIN" ]; then
   echo "==> Commitando alterações..."
+  set +e  # git pode emitir avisos não-fatais; não abortar o script
   if [ ! -d ".git" ]; then
-    $GIT_BIN init
-    $GIT_BIN add .
+    $GIT_BIN init 2>/dev/null
+    $GIT_BIN add . 2>/dev/null
     $GIT_BIN -c user.email="dev@local" -c user.name="Dev" \
-      commit -m "chore: initial commit — landing page Dra. Queren Tribioli"
+      commit -m "chore: initial commit — landing page Dra. Queren Tribioli" 2>/dev/null
     echo "    Repositório criado com commit inicial."
   else
-    $GIT_BIN add .
-    if ! $GIT_BIN diff --cached --quiet; then
+    $GIT_BIN add . 2>/dev/null
+    if ! $GIT_BIN diff --cached --quiet 2>/dev/null; then
       TIMESTAMP=$(date "+%Y-%m-%d %H:%M")
       $GIT_BIN -c user.email="dev@local" -c user.name="Dev" \
-        commit -m "chore: atualiza site ($TIMESTAMP)"
+        commit -m "chore: atualiza site ($TIMESTAMP)" 2>/dev/null
       echo "    Commit criado: $TIMESTAMP"
     else
       echo "    Nenhuma alteração para commitar."
     fi
   fi
+  set -e
 fi
 
 # ── 5. Dev server ─────────────────────────────────────────────────────────────
